@@ -1,10 +1,13 @@
-<p style="color: green"><%= notice %></p>
+<section id="intro" style="padding: 5rem;">
+  <h2 class="major"><%= @cliente.nome %></h2>
+  <p style="color: green"><%= notice %></p>
 
-<%= render @cliente %>
+  <%= render @cliente %>
 
-<div>
-  <%= link_to "Edit this cliente", edit_cliente_path(@cliente) %> |
-  <%= link_to "Back to clientes", clientes_path %>
-
-  <%= button_to "Destroy this cliente", @cliente, method: :delete %>
-</div>
+  <div>
+    <%= link_to "Edit this cliente", edit_cliente_path(@cliente) %> |
+    <%= link_to "Back to clientes", clientes_path %>
+    <p></p>
+    <%= button_to "Apagar cliente", @cliente, method: :delete %>
+  </div>
+</section>

@@ -1,14 +1,28 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Clientes</h1>
-
-<div id="clientes">
-  <% @clientes.each do |cliente| %>
-    <%= render cliente %>
-    <p>
-      <%= link_to "Show this cliente", cliente %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New cliente", new_cliente_path %>
+<section id="intro" style="padding: 5rem;">
+  <h2 class="major">Clientes</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Endereço</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @clientes.each do |cliente| %>
+        <tr>
+          <td><%= cliente.id %></td>
+          <td><%= cliente.nome %></td>
+          <td><%= cliente.telefone %></td>
+          <td><%= cliente.endereco %></td>
+          <td><%= link_to "Mostrar", cliente %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "Novo cliente", new_cliente_path %>
+  <br>
+  <%= link_to "Ir para a página inicial", root_path %>
+</section>
