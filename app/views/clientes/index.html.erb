@@ -1,28 +1,37 @@
-<section id="intro" style="padding: 5rem;">
-  <h2 class="major">Clientes</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nome</th>
-        <th>Telefone</th>
-        <th>Endereço</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @clientes.each do |cliente| %>
-        <tr>
-          <td><%= cliente.id %></td>
-          <td><%= cliente.nome %></td>
-          <td><%= cliente.telefone %></td>
-          <td><%= cliente.endereco %></td>
-          <td><%= link_to "Mostrar", cliente %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= link_to "Novo cliente", new_cliente_path %>
-  <br>
-  <%= link_to "Ir para a página inicial", root_path %>
-</section>
+<header id="header">
+    <div class="logo">
+        <span class="icon fa-gem"></span>
+    </div>
+    <div class="content">
+        <div class="inner">
+            <section id="intro" style="padding: 5rem;">
+            <h2 class="major">Clientes</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>Telefone</th>
+                  <th>Endereço</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @clientes.each do |cliente| %>
+                  <tr>
+                    <td><%= cliente.id %></td>
+                    <td><%= cliente.nome %></td>
+                    <td><%= cliente.telefone %></td>
+                    <td><%= cliente.endereco %></td>
+                    <td><%= link_to "Mostrar", cliente %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <%= link_to "Novo cliente", new_cliente_path %>
+            <br>
+            <%= link_to "Ir para a página inicial", root_path %>
+          </section>
+        </div>
+    </div>
+</header>
