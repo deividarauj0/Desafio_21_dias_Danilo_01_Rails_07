@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+ .btn {
+    width: 80px;
+    height: 35px;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 0px;
+    text-align: center;
+    letter-spacing: 0px;
+    line-height: 0px;
+}
+
+.btn-excluir {
+    background-color: #080808;
+    color: #ffffff;
+}
+
+.btn-editar {
+    background-color: #474545;
+    color: #ffffff;
+}
