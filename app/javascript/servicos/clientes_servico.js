@@ -36,7 +36,7 @@ export class ClienteServico {
     
         let url = "http://[::1]:3000/clientes.json";
 
-        if(this.cliente.id < 1)
+        if(cliente.id < 1)
             requestOptions.method = "POST"
         else{
             requestOptions.method = "PUT"
