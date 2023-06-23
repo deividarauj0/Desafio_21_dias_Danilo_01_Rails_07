@@ -1,8 +1,8 @@
 import { Controller } from "@hotwired/stimulus";
+import { Cliente } from "../models/cliente";
+import { ClienteServico } from "../servicos/clientes_servico";
 import renderClientesTable from "../templates/clientes/index";
 import renderClientesForm from "../templates/clientes/new";
-import { ClienteServico } from "../servicos/clientes_servico";
-import { Cliente } from "../models/cliente";
 
 export default class extends Controller {
   connect() {
@@ -65,7 +65,7 @@ export default class extends Controller {
 
     const authenticity_token = document.querySelector('input[name="authenticity_token"]').value
 
-    await (ClienteServico.salvar(this.cliente, authenticity_token));
+    await ClienteServico.salvar(this.cliente, authenticity_token);
     this.loadClientes();
   };
 
@@ -73,7 +73,7 @@ export default class extends Controller {
     event.preventDefault();
     const cliente = JSON.parse(event.currentTarget.dataset.cliente);
     if(confirm("Deseja realmente excluir?")) {
-      const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+      const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
       await ClienteServico.delete(cliente.id, csrfToken)
 
       this.loadClientes();

@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   get 'stimulus', to: 'spa#index'
   root "home#index"
+
+  get 'fornecedores', to: 'fornecedores#index'
+  get 'fornecedores/novo', to: 'fornecedores#novo', as: "fornecedores_novo"
 end
